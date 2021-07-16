@@ -1,1 +1,220 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+:root {
+  --primaryColor: yellow;
+}
+
+body,
+html {
+  background-color: #ededed !important;
+}
+
+hr {
+  width: 20% !important;
+  border-bottom-color: var(--primaryColor);
+  border-width: medium;
+}
+
+.my-invalid-input {
+  border-color: red !important;
+  border-left-width: medium !important;
+}
+
+@font-face {
+  font-family: "airborne";
+  src: url("/assets/resources/fonts/airborne.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.my-logo-text {
+  font-family: "airborne";
+}
+
+.my-header {
+  padding: 1em 0em;
+  font-weight: 600;
+}
+
+.my-content-header {
+  font-weight: 600;
+}
+
+.my-wrapper-select {
+  margin-bottom: 2em;
+}
+
+.my-year {
+  text-decoration: underline;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.my-panel-content {
+  text-align: justify;
+}
+
+.my-center {
+  display: block;
+  margin: auto;
+}
+
+.my-card-button {
+  cursor: pointer;
+}
+
+table > tbody > tr {
+  cursor: pointer;
+}
+
+.my-selected-table-row {
+  background-color: #ffab00;
+}
+
+@media (max-width: 600px) {
+  .my-logo {
+    height: 64px;
+  }
+  #utfpr-footer {
+    margin: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  #utfpr-footer {
+    margin: auto;
+    display: block;
+  }
+}
+
+/*
+	Fixa o rodapé
+*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/**
+	Estilo about
+*/
+
+.about .col {
+  margin-bottom: 24px;
+}
+
+.about h5 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.about h6 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.about hr {
+  width: 40px;
+  margin-bottom: 45px;
+}
+
+.about .card {
+  text-align: center;
+}
+
+.about .card img {
+  margin-bottom: 15px;
+}
+
+/**
+	Estilo do index
+*/
+
+.intro {
+  text-align: center;
+  padding-top: 13%;
+  padding-bottom: 13%;
+  margin-bottom: 50px;
+  background-image: url("/assets/resources/images/tarifas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.intro h5 {
+  text-transform: uppercase;
+  background-color: #f5f5f5;
+  padding: 10px;
+  color: #333333;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+/**
+	Estilo do contato
+*/
+
+.contact .col {
+  margin-bottom: 24px;
+}
+
+.contact h5 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.contact h6 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.contact hr {
+  width: 40px;
+  margin-bottom: 45px;
+}
+
+.contact .contact-holder {
+  padding-left: 40px;
+  text-align: left;
+}
+
+.contact .contact-holder h6 {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.contact .contact-holder p {
+  margin-bottom: 30px;
+}
+
+footer {
+  padding-top: 0px;
+}
+
+/**
+	Saldo
+*/
+
+.my-balance {
+  padding: 20px 0px !important;
+  font-size: 3em;
+  font-family: "airborne";
+  text-align: center;
+}
