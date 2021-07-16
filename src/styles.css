@@ -1,9 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/resources/styles/index.css";
 @import "~materialize-css/dist/css/materialize.css";
 @import "~material-icons/iconfont/material-icons.css";
 
 :root {
   --primaryColor: yellow;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
 }
 
 body,
@@ -22,14 +31,7 @@ hr {
   border-left-width: medium !important;
 }
 
-@font-face {
-  font-family: "airborne";
-  src: url("/assets/resources/fonts/airborne.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.my-logo-text {
+.my-font {
   font-family: "airborne";
 }
 
@@ -71,37 +73,6 @@ table > tbody > tr {
 
 .my-selected-table-row {
   background-color: #ffab00;
-}
-
-@media (max-width: 600px) {
-  .my-logo {
-    height: 64px;
-  }
-  #utfpr-footer {
-    margin: auto;
-    display: block;
-  }
-}
-
-@media (max-width: 992px) {
-  #utfpr-footer {
-    margin: auto;
-    display: block;
-  }
-}
-
-/*
-	Fixa o rodapé
-*/
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
 }
 
 /**
@@ -202,10 +173,6 @@ main {
 
 .contact .contact-holder p {
   margin-bottom: 30px;
-}
-
-footer {
-  padding-top: 0px;
 }
 
 /**

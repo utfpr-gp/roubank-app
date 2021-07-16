@@ -1,9 +1,14 @@
-.my-logo {
-  height: 64px;
+/*
+	Fixa o rodapé
+*/
+
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-@media (max-width: 600px) {
-  .my-logo {
-    height: 64px;
-  }
+main {
+  flex: 1 0 auto;
+  padding: 0px !important;
 }
