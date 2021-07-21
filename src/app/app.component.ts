@@ -1,5 +1,3 @@
-import * as M from 'materialize-css';
-
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
@@ -7,12 +5,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements AfterViewInit {
-  @ViewChild('mobile') sideNav?: ElementRef;
-
+export class AppComponent {
   title = 'roubank-app';
-
-  ngAfterViewInit(): void {
-    M.Sidenav.init(this.sideNav?.nativeElement);
-  }
 }
