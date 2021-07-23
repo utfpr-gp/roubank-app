@@ -1,10 +1,14 @@
 <!-- intro -->
-<div class="intro amber z-depth-1 my-logo-text">
+<div
+  class="intro amber z-depth-1 my-logo-text"
+  [ngStyle]="this.getBackgroundImage()"
+>
   <h1 class="grey-text text-lighten-5">ROUBANK</h1>
   <h4 class="amber-text text-darken-1">Mais tarifas para você!!!</h4>
-  <h5 class="amber-text text-darken-1">
+  <h5 class="amber-text text-darken-1" [style.backgroundColor]="'black'">
     Só hoje recebemos um total de
-    <span id="tax-span" class="red-text">0</span> Reais em tarifas!
+    <span id="tax-span" class="red-text">0</span>
+    Reais em tarifas!
   </h5>
 </div>
 <!-- intro -->
