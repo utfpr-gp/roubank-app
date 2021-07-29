@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandPageComponent implements OnInit {
   imageURL: string = 'https://lorempixel.com/600/300/business/';
+  isHidePanel = true;
   constructor() {}
 
   getBackgroundImage() {

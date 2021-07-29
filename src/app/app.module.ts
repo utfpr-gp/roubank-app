@@ -6,9 +6,10 @@ import { MenuComponent } from './menu/menu.component';
 import { NgModule } from '@angular/core';
 import { LandPageComponent } from './land-page/land-page.component';
 import { LoginComponent } from './login/login.component';
+import { DonationComponent } from './donation/donation.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, FooterComponent, LandPageComponent, LoginComponent],
+  declarations: [AppComponent, MenuComponent, FooterComponent, LandPageComponent, LoginComponent, DonationComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

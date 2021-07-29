@@ -1,0 +1,57 @@
+<div class="container contact">
+  <h5>Doação</h5>
+  <h6>
+    É importante informar que não cobramos taxas para doações, esteja à vontade
+    para doar o que o seu coração mandar!
+  </h6>
+  <hr />
+  <div class="row">
+    <div class="col s12">
+      <div
+        id="msg-saque"
+        class="card-panel red white-text"
+        style="display: none"
+      ></div>
+    </div>
+    <form class="col s12">
+      <div class="row">
+        <div class="col s12">
+          <select (change)="this.onSelectChange($event)">
+            <option value="-1" selected>Escolha um valor</option>
+            <option value="10">R$ 10,00</option>
+            <option value="25">R$ 25,00</option>
+            <option value="50">R$ 50,00</option>
+            <option value="100">R$ 100,00</option>
+            <option value="1000">R$ 1000,00</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            name="donation-input"
+            type="text"
+            [value]="this.donationValue"
+            (keydown.enter)="onEnterKey()"
+          />
+          <label for="donation-input">Valor de doação</label>
+        </div>
+      </div>
+      <button
+        class="btn waves-effect waves-light amber darken-4"
+        type="button"
+        (click)="this.onButtonClick(); this.onButtonClickAgain()"
+      >
+        Doar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+  <!-- link home -->
+  <div id="painel-login" class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a routerLink="/"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>

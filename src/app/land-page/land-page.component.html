@@ -15,8 +15,8 @@
 
 <!-- container -->
 <div class="container about">
-  <!-- painel serviços -->
-  <div id="painel-servicos" style="display: none">
+  <!-- painel serviços  -->
+  <div id="painel-servicos" [hidden]="this.isHidePanel">
     <h5>Serviços</h5>
     <hr />
     <div class="row">
@@ -58,7 +58,7 @@
   <!-- painel login -->
   <div id="painel-login" class="row">
     <div class="col s12 m6 offset-m3">
-      <a routerLink="login">
+      <a routerLink="/login">
         <div
           id="botao-login"
           class="card-panel amber accent-4 center my-card-button"
