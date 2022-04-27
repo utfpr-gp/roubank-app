@@ -1,0 +1,5 @@
+{
+  "/accounts/type/:t": "/accounts?type=:t",
+  "/contas": "/accounts",
+  "/contas/:id": "/accounts/:id"
+}

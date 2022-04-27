@@ -1,0 +1,51 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "type": "other",
+      "accountNumber": "1234-x",
+      "balance": 100
+    },
+    {
+      "id": 2,
+      "type": "checking_account",
+      "accountNumber": "4545-9",
+      "balance": 50
+    },
+    {
+      "id": 3,
+      "type": "checking_account",
+      "accountNumber": "9595-1",
+      "balance": 632
+    },
+    {
+      "id": 4,
+      "type": "checking_account",
+      "accountNumber": "2222-3",
+      "balance": 789
+    },
+    {
+      "id": 5,
+      "accountNumber": "3333",
+      "type": "savings_account",
+      "balance": 2
+    },
+    {
+      "id": 6,
+      "type": "savings_account",
+      "accountNumber": "7777",
+      "balance": 99
+    },
+    {
+      "id": 7,
+      "type": "savings_account",
+      "accountNumber": "7788-0",
+      "balance": 10000
+    },
+    {
+      "id": 20,
+      "accountNumber": "9696",
+      "balance": "50"
+    }
+  ]
+}
