@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Shared } from './../util/shared';
+
 @Component({
   selector: 'app-land-page',
   templateUrl: './land-page.component.html',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class LandPageComponent implements OnInit {
   imageURL: string = 'https://lorempixel.com/600/300/business/';
   isHidePanel = true;
+
   constructor() {}
 
   getBackgroundImage() {
@@ -19,5 +22,7 @@ export class LandPageComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Shared.initializeUsers();
+  }
 }

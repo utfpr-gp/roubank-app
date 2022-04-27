@@ -16,7 +16,15 @@ import {
 export class MenuComponent implements OnInit, AfterViewInit {
   @ViewChild('mobile') sideNav?: ElementRef;
 
-  constructor() {}
+  public inputElement?: HTMLElement;
+  protected name: string;
+  private counter!: number;
+  sugerido: boolean = true;
+
+  constructor() {
+    this.name = 'Roni';
+    console.log(this.sugerido?.valueOf());
+  }
 
   ngOnInit(): void {}
 

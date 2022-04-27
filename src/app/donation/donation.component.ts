@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
+import { Shared } from './../util/shared';
+
 @Component({
   selector: 'app-donation',
   templateUrl: './donation.component.html',
@@ -11,7 +13,9 @@ export class DonationComponent implements OnInit, AfterViewInit {
     this.donationValue = 0;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Shared.initializeUsers();
+  }
 
   ngAfterViewInit() {
     var elems = document.querySelectorAll('select');

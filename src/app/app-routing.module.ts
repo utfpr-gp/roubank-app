@@ -1,5 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { BalanceComponent } from './balance/balance.component';
+import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
 import { LandPageComponent } from './land-page/land-page.component';
 import { LoginComponent } from './login/login.component';
@@ -10,6 +12,8 @@ const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'doacao', component: DonationComponent },
+  { path: 'saldo', component: BalanceComponent },
+  { path: 'deposito', component: DepositComponent },
 ];
 
 @NgModule({

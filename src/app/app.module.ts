@@ -1,16 +1,35 @@
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BalanceComponent } from './balance/balance.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { DepositComponent } from './deposit/deposit.component';
+import { DonationComponent } from './donation/donation.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { LandPageComponent } from './land-page/land-page.component';
 import { LoginComponent } from './login/login.component';
-import { DonationComponent } from './donation/donation.component';
+import { MenuComponent } from './menu/menu.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, FooterComponent, LandPageComponent, LoginComponent, DonationComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    FooterComponent,
+    LandPageComponent,
+    LoginComponent,
+    DonationComponent,
+    BalanceComponent,
+    DepositComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgxMaskModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
