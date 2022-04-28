@@ -6,9 +6,7 @@
   </h6>
   <hr />
   <div class="row">
-    <div class="col s12 m6 offset-m3 card-panel amber white-text my-balance">
-      R$ 0,00
-    </div>
+    <app-balance-panel [value]="this.user?.balance || 0"></app-balance-panel>
   </div>
   <!-- link home -->
   <div id="painel-login" class="row">

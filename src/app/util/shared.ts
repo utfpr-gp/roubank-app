@@ -8,7 +8,7 @@ export class Shared {
 	Cadastra um usuário default para funcionamento do login.
 	Só realiza o cadastro caso o usuário ainda não esteja salvo no WebStorage.
 */
-  public static initializeUsers(): void {
+  public static initializeWebStorage(): void {
     if (localStorage.getItem(Constants.USERNAME_KEY) != null) {
       return;
     }
@@ -19,5 +19,8 @@ export class Shared {
     localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(user));
     localStorage.setItem(Constants.COSTS_KEY, String(0));
     localStorage.setItem(Constants.LOGGED_IN_KEY, String(false));
+
+    localStorage.removeItem(Constants.DONATION_KEY);
+    localStorage.setItem(Constants.DONATION_KEY, JSON.stringify([]));
   }
 }

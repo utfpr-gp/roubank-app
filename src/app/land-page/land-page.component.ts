@@ -23,6 +23,6 @@ export class LandPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Shared.initializeUsers();
+    Shared.initializeWebStorage();
   }
 }

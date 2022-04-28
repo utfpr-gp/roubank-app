@@ -9,5 +9,11 @@
 <!--fim main-->
 
 <!-- footer -->
-<app-footer></app-footer>
+<app-footer
+  ><span style="font-weight: bold">{{
+    this.currentDate | date: "HH:mm:ss"
+  }}</span>
+  - Latitude: {{ this.coords.latitude }} e Longitude:
+  {{ this.coords.longitude }}
+</app-footer>
 <!-- fim footer-->

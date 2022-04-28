@@ -2,6 +2,7 @@ export class Constants {
   public static readonly USERNAME_KEY = 'tomaz.leite';
   public static readonly COSTS_KEY = 'custos';
   public static readonly LOGGED_IN_KEY = 'eh_logado';
+  public static readonly DONATION_KEY = 'donations';
 
   static readonly WITHDRAW_TYPE = 'saque';
   static readonly DEPOSIT_TYPE = 'deposito';

@@ -5,15 +5,20 @@
     para doar o que o seu coração mandar!
   </h6>
   <hr />
+  <h5>TOTAL JÁ DOADO, DOE TAMBÉM!</h5>
+  <app-balance-panel [value]="this.totalDonations"></app-balance-panel>
   <div class="row">
     <div class="col s12">
       <div
-        id="msg-saque"
-        class="card-panel red white-text"
-        style="display: none"
-      ></div>
+        class="card-panel white-text"
+        [hidden]="!this.message"
+        [class.red]="!this.success"
+        [class.blue]="this.success"
+      >
+        {{ this.message }}
+      </div>
     </div>
-    <form class="col s12">
+    <form class="col s12" (submit)="onSubmit()">
       <div class="row">
         <div class="col s12">
           <select (change)="this.onSelectChange($event)">
@@ -29,20 +34,40 @@
       <div class="row">
         <div class="input-field col s12">
           <input
-            name="donation-input"
-            type="text"
-            [value]="this.donationValue"
+            name="input-donation"
+            type="number"
+            [(ngModel)]="this.donation.value"
             (keydown.enter)="onEnterKey()"
           />
           <label for="donation-input">Valor de doação</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            name="input-username"
+            type="text"
+            [(ngModel)]="this.donation.username"
+          />
+          <label for="donation-input">Nome do usuário</label>
+        </div>
+      </div>
       <button
         class="btn waves-effect waves-light amber darken-4"
-        type="button"
+        type="submit"
         (click)="this.onButtonClick(); this.onButtonClickAgain()"
       >
         Doar
+        <i class="material-icons right">send</i>
+      </button>
+      <button
+        *ngIf="this.submitted"
+        style="margin-left: 10px"
+        class="btn waves-effect waves-light amber darken-4"
+        type="button"
+        (click)="this.onClickResetForm()"
+      >
+        Doar de novo!
         <i class="material-icons right">send</i>
       </button>
     </form>

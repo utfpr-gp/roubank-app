@@ -11,19 +11,17 @@ import { Transaction } from './../model/transaction';
 })
 export class DepositComponent implements OnInit {
   value: number = 0;
-  submitted = false;
   depositInvalid = false;
   depositMessage = '';
 
   constructor() {}
 
   ngOnInit(): void {
-    Shared.initializeUsers();
+    this.depositMessage = '';
+    Shared.initializeWebStorage();
   }
 
   onSubmit() {
-    this.submitted = true;
-
     if (this.value < 5) {
       this.depositInvalid = true;
       this.depositMessage =
@@ -69,6 +67,10 @@ export class DepositComponent implements OnInit {
         2
       )}!`;
 
+    this.value = 0;
+  }
+
+  onResetClick() {
     this.value = 0;
   }
 }
