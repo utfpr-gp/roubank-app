@@ -16,6 +16,7 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { NgModule } from '@angular/core';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 
 registerLocaleData(ptBr);
 
@@ -30,6 +31,7 @@ registerLocaleData(ptBr);
     BalanceComponent,
     DepositComponent,
     BalancePanelComponent,
+    WithdrawComponent,
   ],
   imports: [
     BrowserModule,

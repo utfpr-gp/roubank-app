@@ -49,12 +49,7 @@ export class DepositComponent implements OnInit {
     //persiste novamente o custo
     localStorage.setItem(Constants.COSTS_KEY, cost.toString());
     user.balance += netValue;
-    let transaction = new Transaction(
-      netValue,
-      tax,
-      Constants.DEPOSIT_TYPE,
-      new Date()
-    );
+    let transaction = new Transaction(netValue, tax, Constants.DEPOSIT_TYPE);
     user.transactions.push(transaction);
     localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(user));
 

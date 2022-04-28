@@ -1,26 +1,24 @@
 <div class="container contact">
-  <h5>Depósito</h5>
-  <h6>Cobramos uma taxa de 1% sobre o valor do depósito</h6>
+  <h5>Saque</h5>
+  <h6>Cobramos uma taxa de 2% sobre o valor do saque</h6>
   <hr />
-
   <div class="row">
     <div class="col s12">
       <div
-        id="div-deposit-message"
         class="card-panel white-text"
-        [hidden]="!this.depositMessage"
-        [class.red]="this.depositInvalid"
-        [class.blue]="!this.depositInvalid"
+        [hidden]="!this.message"
+        [class.red]="!this.success"
+        [class.blue]="this.success"
       >
-        {{ this.depositMessage }}
+        {{ this.message }}
       </div>
     </div>
-    <form class="col s12" (submit)="onSubmit()">
+    <form class="col s12" (ngSubmit)="this.onSubmit()">
       <div class="row">
         <div class="input-field col s12">
           <input
-            id="input-deposit"
-            name="input-deposit"
+            id="input-withdraw"
+            name="input-withdraw"
             type="text"
             class="validate money"
             [(ngModel)]="this.value"
@@ -31,26 +29,15 @@
             [dropSpecialCharacters]="true"
             [showMaskTyped]="false"
           />
-          <label for="input-deposit">Valor de depósito</label>
+          <label for="input-withdraw">Valor de Saque</label>
         </div>
       </div>
       <button class="btn waves-effect waves-light amber darken-4" type="submit">
-        Depositar
-        <i class="material-icons right">send</i>
-      </button>
-      <button
-        style="margin-left: 10px"
-        class="btn waves-effect waves-light amber darken-4"
-        type="button"
-        (click)="onResetClick()"
-      >
-        Apagar
+        Saque
         <i class="material-icons right">send</i>
       </button>
     </form>
   </div>
-
-  <p>Valor: {{ this.value }}</p>
   <!-- link home -->
   <div class="row">
     <div class="col s12 m6 offset-m3 center">
