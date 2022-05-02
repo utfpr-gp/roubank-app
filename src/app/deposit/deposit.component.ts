@@ -86,10 +86,11 @@ export class DepositComponent implements OnInit, AfterViewInit {
     this.value = 0;
   }
 
-  onDonationEvent(event: string) {
-    this.modal.show = true;
+  onDonationEvent(event: boolean) {
+    this.modal.show = event;
     this.modal.title = 'Aviso!';
-    this.modal.text = event;
+    this.modal.text = `Você já tem muito dinheiro, já pensou em doar um pouco?
+    Venha conhecer a nossa seção de doação e doe com o coração!`;
   }
 
   onCloseModal() {

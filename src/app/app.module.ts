@@ -19,6 +19,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ModalComponent } from './shared/modal/modal.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 registerLocaleData(ptBr);
 
@@ -36,6 +37,7 @@ registerLocaleData(ptBr);
     WithdrawComponent,
     BankStatementComponent,
     ModalComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,8 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down">
+        <!--logado-->
+        <ul class="right hide-on-med-and-down" [hidden]="!this.loggedIn">
           <li>
             <a routerLink="/saque" class="flow-text">Saque</a>
           </li>
@@ -18,6 +19,7 @@
           <li><a routerLink="/extrato" class="flow-text">Extrato</a></li>
           <li><a routerLink="/doacao" class="flow-text">Doação</a></li>
         </ul>
+        <!--logado-->
       </div>
     </div>
   </nav>
@@ -33,11 +35,15 @@
         </div>
       </div>
     </div>
-    <li><a routerLink="/saque" class="flow-text">Saque</a></li>
-    <li><a routerLink="/deposito" class="flow-text">Depósito</a></li>
-    <li><a routerLink="/saldo" class="flow-text">Saldo</a></li>
-    <li><a routerLink="/extrato" class="flow-text">Extrato</a></li>
-    <li><a [routerLink]="'/doacao'" class="flow-text">Doação</a></li>
+    <!--logado-->
+    <div *ngIf="this.loggedIn">
+      <li><a routerLink="/saque" class="flow-text">Saque</a></li>
+      <li><a routerLink="/deposito" class="flow-text">Depósito</a></li>
+      <li><a routerLink="/saldo" class="flow-text">Saldo</a></li>
+      <li><a routerLink="/extrato" class="flow-text">Extrato</a></li>
+      <li><a [routerLink]="'/doacao'" class="flow-text">Doação</a></li>
+    </div>
+    <!--logado-->
   </ul>
 </div>
 <!-- fim menu -->

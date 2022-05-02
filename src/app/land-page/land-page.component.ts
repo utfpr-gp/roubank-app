@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Constants } from '../util/constants';
+import { WebStorageUtil } from '../util/web-storage-util';
 
 import { Shared } from './../util/shared';
 
@@ -8,8 +10,8 @@ import { Shared } from './../util/shared';
   styleUrls: ['./land-page.component.css'],
 })
 export class LandPageComponent implements OnInit {
-  imageURL: string = 'https://lorempixel.com/600/300/business/';
-  isHidePanel = true;
+  imageURL: string = '/assets/resources/images/tarifas.jpg';
+  loggedIn = false;
 
   constructor() {}
 
@@ -24,5 +26,6 @@ export class LandPageComponent implements OnInit {
 
   ngOnInit(): void {
     Shared.initializeWebStorage();
+    this.loggedIn = WebStorageUtil.get(Constants.LOGGED_IN_KEY);
   }
 }

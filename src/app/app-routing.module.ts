@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BalanceComponent } from './balance/balance.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'extrato', component: BankStatementComponent },
   { path: 'saque', component: WithdrawComponent },
   { path: 'deposito', component: DepositComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
