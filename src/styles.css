@@ -175,14 +175,3 @@ table > tbody > tr {
 .contact .contact-holder p {
   margin-bottom: 30px;
 }
-
-/**
-	Saldo
-*/
-
-.my-balance {
-  padding: 20px 0px !important;
-  font-size: 3em;
-  font-family: "airborne";
-  text-align: center;
-}

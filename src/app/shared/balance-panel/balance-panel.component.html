@@ -1,5 +1,9 @@
 <div class="row">
-  <div class="col s12 m6 offset-m3 card-panel amber white-text my-balance">
+  <div
+    class="col s12 m6 offset-m3 card-panel white-text"
+    id="div-panel"
+    [ngClass]="this.backgroundColor"
+  >
     {{ this.value | currency: "BRL" }}
   </div>
 </div>

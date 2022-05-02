@@ -1,24 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { WebStorageUtil } from './../util/web-storage-util';
+import { User } from './../model/user';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 
 import { Constants } from './../util/constants';
 import { Shared } from './../util/shared';
 import { Transaction } from './../model/transaction';
+import { BalancePanelComponent } from '../shared/balance-panel/balance-panel.component';
 
 @Component({
   selector: 'app-deposit',
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.css'],
 })
-export class DepositComponent implements OnInit {
+export class DepositComponent implements OnInit, AfterViewInit {
   value: number = 0;
   depositInvalid = false;
   depositMessage = '';
+  user!: User;
+
+  @ViewChild(BalancePanelComponent)
+  balancePanelComponent!: BalancePanelComponent;
+
+  modal = {
+    show: false,
+    title: '',
+    text: '',
+  };
 
   constructor() {}
 
   ngOnInit(): void {
     this.depositMessage = '';
     Shared.initializeWebStorage();
+    this.user = WebStorageUtil.get(Constants.USERNAME_KEY);
+  }
+
+  ngAfterViewInit(): void {
+    //demonstração de acesso de um atributo de componente filho por referência
+    console.log(`O seu saldo é ${this.balancePanelComponent.value}`);
   }
 
   onSubmit() {
@@ -28,8 +47,6 @@ export class DepositComponent implements OnInit {
         'Opps!!! O valor precisa ser maior que ou igual a 5 Reais.';
       return;
     }
-
-    const user = JSON.parse(localStorage.getItem(Constants.USERNAME_KEY)!);
 
     //tarifa de deposito
     let tax = this.value * Constants.TAX_DEPOSIT;
@@ -48,10 +65,10 @@ export class DepositComponent implements OnInit {
     }
     //persiste novamente o custo
     localStorage.setItem(Constants.COSTS_KEY, cost.toString());
-    user.balance += netValue;
+    this.user.balance += netValue;
     let transaction = new Transaction(netValue, tax, Constants.DEPOSIT_TYPE);
-    user.transactions.push(transaction);
-    localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(user));
+    this.user.transactions.push(transaction);
+    localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(this.user));
 
     this.depositInvalid = false;
     this.depositMessage = `Depósito de R$ ${netValue.toFixed(
@@ -67,5 +84,15 @@ export class DepositComponent implements OnInit {
 
   onResetClick() {
     this.value = 0;
+  }
+
+  onDonationEvent(event: string) {
+    this.modal.show = true;
+    this.modal.title = 'Aviso!';
+    this.modal.text = event;
+  }
+
+  onCloseModal() {
+    this.modal.show = false;
   }
 }

@@ -6,7 +6,15 @@
   </h6>
   <hr />
   <div class="row">
-    <app-balance-panel [value]="this.user?.balance || 0"></app-balance-panel>
+    <app-balance-panel
+      #balance
+      [value]="this.user?.balance || 0"
+      (dblclick)="
+        balance.getBackgroundColor() == 'amber'
+          ? balance.onDblClickBalance('blue')
+          : balance.onDblClickBalance('amber')
+      "
+    ></app-balance-panel>
   </div>
   <!-- link home -->
   <div id="painel-login" class="row">

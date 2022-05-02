@@ -11,7 +11,7 @@
 <!-- footer -->
 <app-footer
   ><span style="font-weight: bold">{{
-    this.currentDate | date: "HH:mm:ss"
+    this?.currentDate | date: "HH:mm:ss"
   }}</span>
   - Latitude: {{ this.coords?.latitude }} e Longitude:
   {{ this.coords?.longitude }}

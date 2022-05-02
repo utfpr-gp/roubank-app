@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BalanceComponent } from './balance/balance.component';
 import { BalancePanelComponent } from './shared/balance-panel/balance-panel.component';
+import { BankStatementComponent } from './bank-statement/bank-statement.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
@@ -14,9 +15,10 @@ import { LandPageComponent } from './land-page/land-page.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { NgModule } from '@angular/core';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { WithdrawComponent } from './withdraw/withdraw.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 registerLocaleData(ptBr);
 
@@ -32,6 +34,8 @@ registerLocaleData(ptBr);
     DepositComponent,
     BalancePanelComponent,
     WithdrawComponent,
+    BankStatementComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

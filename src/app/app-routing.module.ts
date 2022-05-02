@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { BalanceComponent } from './balance/balance.component';
+import { BankStatementComponent } from './bank-statement/bank-statement.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
 import { LandPageComponent } from './land-page/land-page.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'doacao', component: DonationComponent },
   { path: 'saldo', component: BalanceComponent },
+  { path: 'extrato', component: BankStatementComponent },
   { path: 'saque', component: WithdrawComponent },
   { path: 'deposito', component: DepositComponent },
 ];

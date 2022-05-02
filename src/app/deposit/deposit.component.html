@@ -1,3 +1,5 @@
+<app-modal [show]="modal.show" [content]="modal" (closeEvent)="onCloseModal()">
+</app-modal>
 <div class="container contact">
   <h5>Depósito</h5>
   <h6>Cobramos uma taxa de 1% sobre o valor do depósito</h6>
@@ -51,6 +53,13 @@
   </div>
 
   <p>Valor: {{ this.value }}</p>
+
+  <h5>MEU SALDO</h5>
+  <app-balance-panel
+    #balance
+    [value]="this.user.balance"
+    (donationEvent)="this.onDonationEvent($event)"
+  ></app-balance-panel>
   <!-- link home -->
   <div class="row">
     <div class="col s12 m6 offset-m3 center">
