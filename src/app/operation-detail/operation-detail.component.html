@@ -1,0 +1,28 @@
+<div class="container contact">
+  <h5>Transação</h5>
+  <h6>Dados da transação</h6>
+  <hr />
+  <div class="row">
+    <ul class="collection col s12 offset-m3 m6">
+      <li class="collection-item">
+        <span class="badge left">IDENTIFICADOR</span>{{ this.transaction.id }}
+      </li>
+      <li class="collection-item">
+        <span class="badge left">VALOR</span
+        >{{ this.transaction.value | currency: "BRL" }}
+      </li>
+      <li class="collection-item">
+        <span class="badge left">TAXA</span
+        >{{ this.transaction.tax | currency: "BRL" }}
+      </li>
+      <li class="collection-item">
+        <span class="badge left">TIPO</span
+        >{{ this.transaction.type | uppercase }}
+      </li>
+      <li class="collection-item">
+        <span class="badge left">DATA</span>
+        {{ this.transaction.date | date: "dd/MM/yyyy" }}
+      </li>
+    </ul>
+  </div>
+</div>

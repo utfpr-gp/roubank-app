@@ -1,3 +1,4 @@
+import { OperationDetailComponent } from './operation-detail/operation-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'doacao', component: DonationComponent },
   { path: 'saldo', component: BalanceComponent },
+  { path: 'extrato/detalhes/:id', component: OperationDetailComponent },
   { path: 'extrato', component: BankStatementComponent },
   { path: 'saque', component: WithdrawComponent },
   { path: 'deposito', component: DepositComponent },

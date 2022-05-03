@@ -20,6 +20,8 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ModalComponent } from './shared/modal/modal.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OperationDetailComponent } from './operation-detail/operation-detail.component';
+import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
 
 registerLocaleData(ptBr);
 
@@ -38,6 +40,8 @@ registerLocaleData(ptBr);
     BankStatementComponent,
     ModalComponent,
     PageNotFoundComponent,
+    OperationDetailComponent,
+    DonationStatementComponent,
   ],
   imports: [
     BrowserModule,

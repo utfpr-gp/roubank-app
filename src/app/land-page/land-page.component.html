@@ -49,6 +49,21 @@
           </div>
         </a>
       </div>
+      <div class="col s12 m6">
+        <a [routerLink]="['/extrato']" [queryParams]="{ tipo: 'saque' }">
+          <div class="card-panel amber accent-4 center my-card-button">
+            <span class="white-text flow-text"> EXTRATO DE SAQUE </span>
+          </div>
+        </a>
+      </div>
+      <div class="col s12 m6">
+        <a [routerLink]="['/extrato']" [queryParams]="{ tipo: 'deposito' }">
+          <div class="card-panel amber accent-4 center my-card-button">
+            <span class="white-text flow-text"> EXTRATO DE DEPÓSITO</span>
+          </div>
+        </a>
+      </div>
+
       <!-- serviços -->
     </div>
     <!-- fim linha -->
