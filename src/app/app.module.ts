@@ -22,6 +22,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OperationDetailComponent } from './operation-detail/operation-detail.component';
 import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
+import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
 
 registerLocaleData(ptBr);
 
@@ -42,6 +43,7 @@ registerLocaleData(ptBr);
     PageNotFoundComponent,
     OperationDetailComponent,
     DonationStatementComponent,
+    LinkDonationStatementComponent,
   ],
   imports: [
     BrowserModule,

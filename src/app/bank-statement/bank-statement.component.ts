@@ -21,7 +21,7 @@ export class BankStatementComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      if (params['tipo'] == 'saque') {
+      if (params.tipo == 'saque') {
         this.withdraw = true;
         this.deposit = false;
       } else if (params['tipo'] == 'deposito') {
@@ -31,6 +31,7 @@ export class BankStatementComponent implements OnInit {
         this.withdraw = true;
         this.deposit = true;
       }
+      this.doFilterTransactions(this.withdraw, this.deposit);
     });
     this.user = WebStorageUtil.get(Constants.USERNAME_KEY) as User;
     this.transactions = this.user.transactions;
@@ -65,5 +66,6 @@ export class BankStatementComponent implements OnInit {
 
   onClickItem(t: Transaction) {
     this.router.navigate(['/extrato/detalhes', t?.id]);
+    //this.router.navigate(['/extrato/detalhes', { id: t?.id }]);
   }
 }

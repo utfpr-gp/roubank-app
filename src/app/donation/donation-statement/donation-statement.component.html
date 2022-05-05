@@ -1,1 +1,26 @@
-<p>donation-statement works!</p>
+<div>
+  <h5>Extrato de doações</h5>
+  <hr />
+
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <table>
+        <thead>
+          <tr>
+            <th data-field="td-date">Data</th>
+            <th data-field="td-value">Valor</th>
+            <th data-field="td-value">Usuário</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let d of this.donations">
+            <td>{{ d.date | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+            <td>{{ d.value | currency: "BRL" }}</td>
+            <td>{{ d.username }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

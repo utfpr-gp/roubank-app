@@ -17,19 +17,18 @@ export class OperationDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      let user = WebStorageUtil.get(Constants.USERNAME_KEY) as User;
-      let transactions = user.transactions;
-      let idParam = params['id'];
-      transactions = transactions.filter((t) => {
-        return t.id == idParam;
-      });
+    let idParam: number = +this.route.snapshot.paramMap.get('id')!;
+    let user = WebStorageUtil.get(Constants.USERNAME_KEY) as User;
+    let transactions = user.transactions;
 
-      if (transactions.length == 0) {
-        alert('Oppsss! A transação não foi encontrada!');
-      }
-
-      this.transaction = transactions[0];
+    transactions = transactions.filter((t) => {
+      return t.id === idParam;
     });
+
+    if (transactions.length == 0) {
+      alert('Oppsss! A transação não foi encontrada!');
+    }
+
+    this.transaction = transactions[0];
   }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Constants } from '../util/constants';
-import { WebStorageUtil } from '../util/web-storage-util';
 
+import { Constants } from '../util/constants';
+import { Router } from '@angular/router';
 import { Shared } from './../util/shared';
+import { WebStorageUtil } from '../util/web-storage-util';
 
 @Component({
   selector: 'app-land-page',
@@ -13,7 +14,7 @@ export class LandPageComponent implements OnInit {
   imageURL: string = '/assets/resources/images/tarifas.jpg';
   loggedIn = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getBackgroundImage() {
     return {
@@ -27,5 +28,9 @@ export class LandPageComponent implements OnInit {
   ngOnInit(): void {
     Shared.initializeWebStorage();
     this.loggedIn = WebStorageUtil.get(Constants.LOGGED_IN_KEY);
+  }
+
+  onDepositClick() {
+    this.router.navigate(['/extrato'], { queryParams: { tipo: 'deposito' } });
   }
 }

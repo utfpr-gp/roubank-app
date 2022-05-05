@@ -7,8 +7,9 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { WebStorageUtil } from 'src/app/util/web-storage-util';
+
 import { Constants } from 'src/app/util/constants';
+import { WebStorageUtil } from 'src/app/util/web-storage-util';
 
 @Component({
   selector: 'app-menu',
@@ -17,6 +18,7 @@ import { Constants } from 'src/app/util/constants';
 })
 export class MenuComponent implements OnInit, AfterViewInit {
   loggedIn = false;
+  donationLink = '/doacao';
   @ViewChild('mobile') sideNav?: ElementRef;
 
   constructor() {}

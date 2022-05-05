@@ -57,7 +57,7 @@
         </a>
       </div>
       <div class="col s12 m6">
-        <a [routerLink]="['/extrato']" [queryParams]="{ tipo: 'deposito' }">
+        <a (click)="onDepositClick()">
           <div class="card-panel amber accent-4 center my-card-button">
             <span class="white-text flow-text"> EXTRATO DE DEPÓSITO</span>
           </div>
