@@ -1,0 +1,177 @@
+<div class="container contact">
+  <h5>Cadastro de Usuários</h5>
+  <h6>Entre com os dados do usuário</h6>
+  <hr />
+  <div class="row">
+    <div class="col s12">
+      <div
+        id="msg-login"
+        class="card-panel white-text"
+        [class.red]="!this.isSuccess"
+        [class.blue]="this.isSuccess"
+        *ngIf="this.isShowMessage"
+      >
+        {{ this.message }}
+      </div>
+    </div>
+    <form class="col s12" #form="ngForm" (submit)="onSubmit()">
+      <div class="input-field col s12">
+        <input
+          id="input-name"
+          name="input-name"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.user.name"
+          pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
+          #name="ngModel"
+          required
+        />
+        <label for="input-name">Nome Completo *</label>
+        <div class="red-text" [hidden]="name.valid || name.untouched">
+          Por favor, informe o seu nome completo.
+        </div>
+      </div>
+
+      <div class="input-field col s12">
+        <input
+          id="input-username"
+          name="input-username"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.user.username"
+          pattern="^[a-z]+([\.-]?[a-z]+)*"
+          #username="ngModel"
+          required
+        />
+        <label for="input-username">Nome de Usuário *</label>
+        <div class="red-text" [hidden]="username.valid || username.untouched">
+          Por favor, informe o seu username em letras minúsculas e sem espaços.
+        </div>
+      </div>
+
+      <div class="input-field col s12 l6">
+        <input
+          id="input-password"
+          name="input-password"
+          type="password"
+          class="validate"
+          [(ngModel)]="this.user.password"
+          pattern="^[a-zA-Z0-9_@#\\&\\$]{6,18}$"
+          #password="ngModel"
+          required
+        />
+        <label for="input-password">Senha *</label>
+        <div class="red-text" [hidden]="password.valid || password.untouched">
+          Por favor, nos informe a sua senha com pelo menos 6 caracteres!
+        </div>
+      </div>
+
+      <div class="input-field col s12 l6">
+        <input
+          id="input-user-repassword"
+          name="input-user-repassword"
+          type="password"
+          class="validate"
+          [(ngModel)]="this.userRepassword"
+          #repassword="ngModel"
+          pattern="{{ password.value }}"
+          required
+        />
+        <label for="input-user-repassword">Repita a senha *</label>
+        <div
+          class="red-text"
+          [hidden]="repassword.valid || repassword.untouched"
+        >
+          Por favor, repita a sua senha.
+        </div>
+      </div>
+
+      <div class="input-field col s12 l6">
+        <input
+          id="input-cpf"
+          name="input-cpf"
+          type="text"
+          class="validate"
+          [(ngModel)]="this.user.cpf"
+          pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+          mask="CPF_CNPJ"
+          [dropSpecialCharacters]="false"
+          #cpf="ngModel"
+          required
+        />
+        <label for="input-cpf">CPF *</label>
+        <div class="red-text" [hidden]="cpf.valid || cpf.untouched">
+          Por favor, informe o seu CPF.
+        </div>
+      </div>
+
+      <div class="input-field col s12 l6">
+        <input
+          id="input-birthday"
+          name="input-birthday"
+          type="date"
+          class="validate"
+          [(ngModel)]="this.user.birthday"
+        />
+        <label for="input-birthday">Data de Nascimento</label>
+      </div>
+
+      <button
+        class="btn waves-effect waves-light amber darken-4"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Enviar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+
+  <h5>Usuários cadastrados</h5>
+  <!-- Tabela de usuários -->
+  <table class="highlight" *ngIf="users && users!.length > 0">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>Nome de usuário</th>
+        <th>CPF</th>
+        <th>Saldo</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.name }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.cpf }}</td>
+        <td>{{ u.balance | currency: "BRL" }}</td>
+        <td class="right">
+          <a
+            ><i class="material-icons my-icon-size" (click)="onEdit(u)"
+              >edit</i
+            ></a
+          >
+          <a
+            ><i
+              class="material-icons my-icon-size"
+              (click)="onDelete(u.username)"
+              >delete</i
+            ></a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!users || users!.length == 0">
+    <div class="row">
+      <div class="center-align">
+        <i class="col s12 material-icons large">mood_bad</i>
+        <span class="col s12 flow-text"
+          >Ainda não temos usuários cadastrados!</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

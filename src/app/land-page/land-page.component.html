@@ -16,7 +16,7 @@
 <!-- container -->
 <div class="container about">
   <!-- painel serviços  -->
-  <div id="painel-servicos" [hidden]="!this.loggedIn">
+  <div id="painel-servicos" *ngIf="this.loggedIn">
     <h5>Serviços</h5>
     <hr />
     <div class="row">

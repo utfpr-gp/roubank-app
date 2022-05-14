@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthenticationGuard } from './util/authentication.guard';
 import { BalanceComponent } from './balance/balance.component';
 import { BankStatementComponent } from './bank-statement/bank-statement.component';
 import { DepositComponent } from './deposit/deposit.component';
@@ -9,13 +10,20 @@ import { LandPageComponent } from './land-page/land-page.component';
 import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 import { OperationDetailComponent } from './operation-detail/operation-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserComponent } from './user/user.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 
 const routes: Routes = [
   { path: 'inicio', component: LandPageComponent },
   { path: 'login', component: LoginComponent },
+  {
+    path: 'a/usuarios',
+    component: UserComponent,
+    canActivate: [AuthenticationGuard],
+  },
   {
     path: 'doacao',
     component: DonationComponent,
@@ -35,6 +43,7 @@ const routes: Routes = [
   { path: 'extrato', component: BankStatementComponent },
   { path: 'saque', component: WithdrawComponent },
   { path: 'deposito', component: DepositComponent },
+  { path: 'nao-autorizado', component: NotauthorizedComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -43,5 +52,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   //imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
+  providers: [AuthenticationGuard],
 })
 export class AppRoutingModule {}

@@ -23,6 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { OperationDetailComponent } from './operation-detail/operation-detail.component';
 import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
 import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
+import { UserComponent } from './user/user.component';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 
 registerLocaleData(ptBr);
 
@@ -44,6 +46,8 @@ registerLocaleData(ptBr);
     OperationDetailComponent,
     DonationStatementComponent,
     LinkDonationStatementComponent,
+    UserComponent,
+    NotauthorizedComponent,
   ],
   imports: [
     BrowserModule,
