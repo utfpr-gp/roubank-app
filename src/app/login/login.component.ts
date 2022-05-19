@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Constants } from '../util/constants';
+import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { User } from '../model/user';
-import { Constants } from '../util/constants';
 import { WebStorageUtil } from '../util/web-storage-util';
 
 @Component({
@@ -12,7 +14,7 @@ import { WebStorageUtil } from '../util/web-storage-util';
 export class LoginComponent implements OnInit {
   user!: User;
   loginUser!: User;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.loginUser = new User('', '');
@@ -25,6 +27,7 @@ export class LoginComponent implements OnInit {
       this.loginUser.password === this.user.password
     ) {
       WebStorageUtil.set(Constants.LOGGED_IN_KEY, true);
+      this.loginService.login();
       this.router.navigate(['']);
     } else {
       alert(

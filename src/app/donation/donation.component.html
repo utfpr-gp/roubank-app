@@ -35,11 +35,17 @@
         <div class="input-field col s12">
           <input
             name="input-donation"
-            type="number"
+            type="text"
             [(ngModel)]="this.donation.value"
             (keydown.enter)="onEnterKey()"
+            mask="separator.2"
+            [thousandSeparator]="'.'"
+            [decimalMarker]="','"
+            prefix="R$ "
+            [dropSpecialCharacters]="true"
+            [showMaskTyped]="false"
           />
-          <label for="donation-input">Valor de doação</label>
+          <label class="active" for="input-donation">Valor de doação</label>
         </div>
       </div>
       <div class="row">
@@ -48,8 +54,11 @@
             name="input-username"
             type="text"
             [(ngModel)]="this.donation.username"
+            pattern="^[a-z]+([\.-]?[a-z]+)*"
+            #username="ngModel"
+            required
           />
-          <label for="donation-input">Nome do usuário</label>
+          <label class="active" for="input-username">Nome do usuário</label>
         </div>
       </div>
       <button

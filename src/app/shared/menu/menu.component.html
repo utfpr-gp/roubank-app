@@ -20,6 +20,9 @@
           <li>
             <a [routerLink]="this.donationLink" class="flow-text">Doação</a>
           </li>
+          <li>
+            <a class="flow-text" (click)="onLogout()">Sair</a>
+          </li>
         </ul>
         <!--logado-->
       </div>
@@ -44,6 +47,9 @@
       <li><a [routerLink]="['/saldo']" class="flow-text">Saldo</a></li>
       <li><a [routerLink]="'/extrato'" class="flow-text">Extrato</a></li>
       <li><a [routerLink]="this.donationLink" class="flow-text">Doação</a></li>
+      <li>
+        <a class="flow-text" (click)="onLogout()">Sair</a>
+      </li>
     </div>
     <!--logado-->
   </ul>

@@ -56,8 +56,8 @@ export class BankStatementComponent implements OnInit {
   }
 
   doFilterTransactions(withdraw: boolean, deposit: boolean) {
-    this.transactions = this.user.transactions;
-    this.transactions = this.transactions.filter(
+    this.transactions = this.user?.transactions;
+    this.transactions = this.transactions?.filter(
       (t) =>
         (withdraw && t.type === Constants.WITHDRAW_TYPE) ||
         (deposit && t.type === Constants.DEPOSIT_TYPE)

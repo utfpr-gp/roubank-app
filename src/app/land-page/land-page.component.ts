@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Constants } from '../util/constants';
+import { LoginService } from './../services/login.service';
 import { Router } from '@angular/router';
 import { Shared } from './../util/shared';
+import { Subscription } from 'rxjs';
 import { WebStorageUtil } from '../util/web-storage-util';
 
 @Component({
@@ -13,8 +15,13 @@ import { WebStorageUtil } from '../util/web-storage-util';
 export class LandPageComponent implements OnInit {
   imageURL: string = '/assets/resources/images/tarifas.jpg';
   loggedIn = false;
+  subscription!: Subscription;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: LoginService) {
+    this.subscription = this.loginService.login$.subscribe((data) => {
+      this.loggedIn = data;
+    });
+  }
 
   getBackgroundImage() {
     return {
@@ -32,5 +39,9 @@ export class LandPageComponent implements OnInit {
 
   onDepositClick() {
     this.router.navigate(['/extrato'], { queryParams: { tipo: 'deposito' } });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

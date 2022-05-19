@@ -43,8 +43,10 @@ export class UserComponent implements OnInit {
     this.isShowMessage = true;
     this.isSuccess = true;
     this.message = 'Cadastro realizado com sucesso!';
+
     this.form.reset();
     this.user = new User('', '');
+
     this.users = this.userService.getUsers();
   }
 
