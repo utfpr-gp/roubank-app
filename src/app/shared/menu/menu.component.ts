@@ -26,13 +26,15 @@ export class MenuComponent implements OnInit, AfterViewInit {
   @ViewChild('mobile') sideNav?: ElementRef;
 
   constructor(private loginService: LoginService) {
-    this.subscription = loginService.login$.subscribe((data) => {
+    this.subscription = loginService.asObservable().subscribe((data) => {
       this.loggedIn = data;
+      console.log('observer - menu');
     });
   }
 
   ngOnInit(): void {
     this.loggedIn = WebStorageUtil.get(Constants.LOGGED_IN_KEY) as boolean;
+    console.log('init - menu');
   }
 
   ngAfterViewInit(): void {
@@ -40,7 +42,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
   }
 
   onLogout() {
-    this.loggedIn = false;
+    //this.loggedIn = false;
     this.loginService.logout();
   }
 

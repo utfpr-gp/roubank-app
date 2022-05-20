@@ -14,7 +14,7 @@ import { WebStorageUtil } from '../util/web-storage-util';
 export class LoginComponent implements OnInit {
   user!: User;
   loginUser!: User;
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(private loginService: LoginService) {}
 
   ngOnInit(): void {
     this.loginUser = new User('', '');
@@ -26,9 +26,7 @@ export class LoginComponent implements OnInit {
       this.loginUser.username === this.user.username &&
       this.loginUser.password === this.user.password
     ) {
-      WebStorageUtil.set(Constants.LOGGED_IN_KEY, true);
       this.loginService.login();
-      this.router.navigate(['']);
     } else {
       alert(
         'Oppsss! Por favor, verifique seu nome de usuário ou senha e tente novamente!'

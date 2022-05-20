@@ -25,6 +25,7 @@ import { DonationStatementComponent } from './donation/donation-statement/donati
 import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
 import { UserComponent } from './user/user.component';
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { TotalUsersComponent } from './user/total-users/total-users.component';
 
 registerLocaleData(ptBr);
 
@@ -48,6 +49,7 @@ registerLocaleData(ptBr);
     LinkDonationStatementComponent,
     UserComponent,
     NotauthorizedComponent,
+    TotalUsersComponent,
   ],
   imports: [
     BrowserModule,

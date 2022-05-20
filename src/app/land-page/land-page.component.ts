@@ -18,8 +18,9 @@ export class LandPageComponent implements OnInit {
   subscription!: Subscription;
 
   constructor(private router: Router, private loginService: LoginService) {
-    this.subscription = this.loginService.login$.subscribe((data) => {
+    this.subscription = this.loginService.asObservable().subscribe((data) => {
       this.loggedIn = data;
+      console.log('observer - land-page');
     });
   }
 
@@ -35,6 +36,7 @@ export class LandPageComponent implements OnInit {
   ngOnInit(): void {
     Shared.initializeWebStorage();
     this.loggedIn = WebStorageUtil.get(Constants.LOGGED_IN_KEY);
+    console.log('init - land-page');
   }
 
   onDepositClick() {
@@ -43,5 +45,6 @@ export class LandPageComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    console.log('destroy - land-page');
   }
 }

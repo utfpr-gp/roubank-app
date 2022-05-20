@@ -11,6 +11,7 @@ import { WebStorageUtil } from 'src/app/util/web-storage-util';
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
+  providers: [UserService],
 })
 export class UserComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
@@ -48,6 +49,8 @@ export class UserComponent implements OnInit {
     this.user = new User('', '');
 
     this.users = this.userService.getUsers();
+
+    this.userService.notifyTotalUsers();
   }
 
   /**
@@ -77,5 +80,6 @@ export class UserComponent implements OnInit {
       this.message = 'Opps! O item não pode ser removido!';
     }
     this.users = this.userService.getUsers();
+    this.userService.notifyTotalUsers();
   }
 }
