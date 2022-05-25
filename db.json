@@ -1,51 +1,129 @@
 {
-  "accounts": [
+  "users": [
+    {
+      "id": "10",
+      "username": "tomaz.leite",
+      "password": "qwerty",
+      "balance": 574.7400000000002,
+      "isAdmin": false
+    },
+    {
+      "username": "tomaz.leite2",
+      "password": "qwerty",
+      "balance": 100,
+      "isAdmin": false,
+      "id": "AgqJ9Sx"
+    },
+    {
+      "username": "tomaz.leite3",
+      "password": "qwerty",
+      "balance": 100,
+      "isAdmin": false,
+      "id": "Li2dsSA"
+    },
+    {
+      "username": "tomaz.leite4",
+      "password": "qwerty",
+      "balance": 100,
+      "isAdmin": false,
+      "id": "5QDzw13"
+    }
+  ],
+  "transactions": [
+    {
+      "value": 31,
+      "tax": 2.09,
+      "type": "deposit",
+      "id": 490,
+      "date": "2022-05-21T00:12:50.798Z",
+      "userId": "10"
+    },
+    {
+      "value": 31.909999999999997,
+      "tax": 2.09,
+      "type": "deposit",
+      "id": 491,
+      "date": "2022-05-21T00:12:50.798Z",
+      "userId": "10"
+    },
+    {
+      "value": 31.23,
+      "tax": 2.09,
+      "type": "deposit",
+      "id": 390,
+      "date": "2022-05-21T00:12:50.798Z",
+      "userId": "10"
+    },
+    {
+      "value": 32.67,
+      "tax": 0.33,
+      "type": "deposit",
+      "id": 993,
+      "date": "2022-05-23T03:49:03.776Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 173,
+      "date": "2022-05-25T15:58:56.380Z",
+      "userId": "10"
+    },
+    {
+      "value": 6.43,
+      "tax": 0.5700000000000001,
+      "type": "deposit",
+      "id": 723,
+      "date": "2022-05-25T15:59:14.564Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 441,
+      "date": "2022-05-25T16:00:55.651Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 760,
+      "date": "2022-05-25T16:04:28.646Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 96,
+      "date": "2022-05-25T16:05:03.912Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 409,
+      "date": "2022-05-25T16:09:06.060Z",
+      "userId": "10"
+    },
+    {
+      "value": 5.94,
+      "tax": 0.06,
+      "type": "deposit",
+      "id": 358,
+      "date": "2022-05-25T16:19:56.462Z",
+      "userId": "10"
+    }
+  ],
+  "donations": [
     {
       "id": 1,
-      "type": "other",
-      "accountNumber": "1234-x",
-      "balance": 100
-    },
-    {
-      "id": 2,
-      "type": "checking_account",
-      "accountNumber": "4545-9",
-      "balance": 50
-    },
-    {
-      "id": 3,
-      "type": "checking_account",
-      "accountNumber": "9595-1",
-      "balance": 632
-    },
-    {
-      "id": 4,
-      "type": "checking_account",
-      "accountNumber": "2222-3",
-      "balance": 789
-    },
-    {
-      "id": 5,
-      "accountNumber": "3333",
-      "type": "savings_account",
-      "balance": 2
-    },
-    {
-      "id": 6,
-      "type": "savings_account",
-      "accountNumber": "7777",
-      "balance": 99
-    },
-    {
-      "id": 7,
-      "type": "savings_account",
-      "accountNumber": "7788-0",
-      "balance": 10000
-    },
-    {
-      "id": 20,
-      "accountNumber": "9696",
-      "balance": "50"
+      "value": 10,
+      "userId": "10"
     }
   ]
 }

@@ -44,7 +44,7 @@ export class WithdrawComponent implements OnInit {
     const transaction = new Transaction(
       this.value,
       tax,
-      Constants.WITHDRAW_TYPE
+      Transaction.WITHDRAW_TYPE
     );
     user.transactions.push(transaction);
     WebStorageUtil.set(Constants.USERNAME_KEY, user);

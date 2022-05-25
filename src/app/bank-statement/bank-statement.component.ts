@@ -59,8 +59,8 @@ export class BankStatementComponent implements OnInit {
     this.transactions = this.user?.transactions;
     this.transactions = this.transactions?.filter(
       (t) =>
-        (withdraw && t.type === Constants.WITHDRAW_TYPE) ||
-        (deposit && t.type === Constants.DEPOSIT_TYPE)
+        (withdraw && t.type === Transaction.WITHDRAW_TYPE) ||
+        (deposit && t.type === Transaction.DEPOSIT_TYPE)
     );
   }
 

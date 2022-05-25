@@ -1,5 +1,6 @@
 {
-  "/accounts/type/:t": "/accounts?type=:t",
-  "/contas": "/accounts",
-  "/contas/:id": "/accounts/:id"
+  "/transactions/type/:t": "/transactions?type=:t",
+  "/transacoes/tipo/:t": "/transactions?type=:t",
+  "/usuarios": "/users",
+  "/usuarios/:username": "/users?username=:username"
 }

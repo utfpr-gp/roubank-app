@@ -1,6 +1,7 @@
 import { Transaction } from './transaction';
 
 export class User {
+  id!: string;
   name?: string;
   username: string;
   password: string;
@@ -10,6 +11,7 @@ export class User {
   isAdmin: boolean;
   transactions: Transaction[];
   constructor(username: string, password: string, isAdmin: boolean = false) {
+    this.id = String(Math.round(Math.random() * 1000));
     this.username = username;
     this.password = password;
     this.balance = 0;

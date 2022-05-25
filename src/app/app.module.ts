@@ -9,23 +9,24 @@ import { BankStatementComponent } from './bank-statement/bank-statement.componen
 import { BrowserModule } from '@angular/platform-browser';
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
+import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { LandPageComponent } from './land-page/land-page.component';
+import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { ModalComponent } from './shared/modal/modal.component';
 import { NgModule } from '@angular/core';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { OperationDetailComponent } from './operation-detail/operation-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TotalUsersComponent } from './user/total-users/total-users.component';
+import { UserComponent } from './user/user.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { ModalComponent } from './shared/modal/modal.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { OperationDetailComponent } from './operation-detail/operation-detail.component';
-import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
-import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
-import { UserComponent } from './user/user.component';
-import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
-import { TotalUsersComponent } from './user/total-users/total-users.component';
 
 registerLocaleData(ptBr);
 
@@ -54,6 +55,7 @@ registerLocaleData(ptBr);
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     NgxMaskModule.forRoot(),
   ],
