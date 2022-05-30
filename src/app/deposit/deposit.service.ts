@@ -1,7 +1,7 @@
+import { DebugEventListener, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Constants } from 'src/app/util/constants';
-import { Injectable } from '@angular/core';
 import { Transaction } from './../model/transaction';
 import { TransactionPromiseService } from './../services/transaction-promise.service';
 import { User } from './../model/user';
@@ -63,6 +63,7 @@ export class DepositService {
 
           //salva também no WebStorage
           this.userWS = WebStorageUtil.get(Constants.USERNAME_KEY);
+
           this.userWS.transactions.push(transaction);
           this.userWS.balance += netValue;
           localStorage.setItem(
@@ -72,9 +73,13 @@ export class DepositService {
 
           let p1 = this.userPromiseService.patch(user);
           let p2 = this.transactionPromiseService.save(transaction);
-          Promise.all([p1, p2]).then((values) => {
-            resolve(values[1].value);
-          });
+          Promise.all([p1, p2])
+            .then((values) => {
+              resolve(values[1].value);
+            })
+            .catch((e) => {
+              reject('Opps!!! Não foi possível persistir a transação!');
+            });
         })
         .catch((e) => {
           reject('Opps!!! O usuário não foi encontrado!');

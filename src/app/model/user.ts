@@ -28,4 +28,19 @@ export class User {
     u.transactions = user.transactions;
     return u;
   }
+
+  /**
+   * Transforma um objeto pego da API para a versão salva no WebStorage
+   * @param user
+   * @returns
+   */
+  public static toWS(user: User) {
+    let u: User = new User(user.username, user.password, user.isAdmin);
+    u.name = user.name;
+    u.cpf = user.cpf;
+    u.birthday = user.birthday;
+    u.balance = user.balance;
+    u.transactions = [];
+    return u;
+  }
 }

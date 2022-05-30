@@ -150,9 +150,9 @@
 
     <tbody>
       <tr *ngFor="let u of users">
-        <td>{{ u.name }}</td>
-        <td>{{ u.username }}</td>
-        <td>{{ u.cpf }}</td>
+        <td>{{ u.name | titlecase }}</td>
+        <td>{{ u.username | lowercase }}</td>
+        <td>{{ u!.cpf! | cpf }}</td>
         <td>{{ u.balance | currency: "BRL" }}</td>
         <td class="right">
           <a

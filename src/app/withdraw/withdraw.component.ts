@@ -46,7 +46,7 @@ export class WithdrawComponent implements OnInit {
       tax,
       Transaction.WITHDRAW_TYPE
     );
-    user.transactions.push(transaction);
+    user.transactions?.push(transaction);
     WebStorageUtil.set(Constants.USERNAME_KEY, user);
 
     this.success = true;

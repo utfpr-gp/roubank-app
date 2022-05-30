@@ -42,7 +42,10 @@ export class DepositComponent implements OnInit, AfterViewInit {
       .getByUsername(Constants.USERNAME_KEY)
       .then((u: User[]) => {
         this.user = u[0];
-        localStorage.setItem(Constants.USERNAME_KEY, JSON.stringify(this.user));
+        localStorage.setItem(
+          Constants.USERNAME_KEY,
+          JSON.stringify(User.toWS(this.user))
+        );
       })
       .catch((e) => {
         //erro ao pegar do json-server

@@ -4,8 +4,8 @@
       "id": "10",
       "username": "tomaz.leite",
       "password": "qwerty",
-      "balance": 574.7400000000002,
-      "isAdmin": false
+      "balance": 1066.0200000000002,
+      "isAdmin": true
     },
     {
       "username": "tomaz.leite2",
@@ -116,6 +116,30 @@
       "type": "deposit",
       "id": 358,
       "date": "2022-05-25T16:19:56.462Z",
+      "userId": "10"
+    },
+    {
+      "value": 33.66,
+      "tax": 0.34,
+      "type": "deposit",
+      "id": 108,
+      "date": "2022-05-27T16:13:58.577Z",
+      "userId": "10"
+    },
+    {
+      "value": 435.35,
+      "tax": 4.65,
+      "type": "deposit",
+      "id": 971,
+      "date": "2022-05-27T16:37:42.317Z",
+      "userId": "10"
+    },
+    {
+      "value": 22.27,
+      "tax": 0.73,
+      "type": "deposit",
+      "id": 947,
+      "date": "2022-05-27T16:41:59.298Z",
       "userId": "10"
     }
   ],
