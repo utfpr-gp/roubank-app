@@ -5,6 +5,7 @@ import { Shared } from './../util/shared';
 import { Transaction } from './../model/transaction';
 import { User } from './../model/user';
 import { WebStorageUtil } from './../util/web-storage-util';
+import { WithdrawService } from './withdraw.service';
 
 @Component({
   selector: 'app-withdraw',
@@ -15,7 +16,7 @@ export class WithdrawComponent implements OnInit {
   value: number = 0;
   success = false;
   message = '';
-  constructor() {}
+  constructor(private withdrawService: WithdrawService) {}
 
   ngOnInit(): void {
     this.message = '';
@@ -23,36 +24,19 @@ export class WithdrawComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.value < 10) {
-      this.success = false;
-      this.message =
-        'Opps!!! O valor precisa ser maior que ou igual a 10 Reais.';
-      return;
-    }
-    const user = WebStorageUtil.get(Constants.USERNAME_KEY) as User;
-
-    let tax = this.value * Constants.TAX_WITHDRAW;
-
-    if (this.value + tax > user.balance) {
-      this.success = false;
-      this.message = 'Opps!!! Saldo insuficiente!';
-      return;
-    }
-
-    user.balance -= this.value + tax;
-
-    const transaction = new Transaction(
-      this.value,
-      tax,
-      Transaction.WITHDRAW_TYPE
+    this.withdrawService.do(this.value, Constants.USERNAME_KEY).subscribe(
+      (data) => {
+        let value = this.value;
+        this.success = true;
+        console.log(data);
+        this.message = `Saque de R$ ${value.toFixed(2)} realizado com sucesso
+    com uma pequena taxa de R$ ${(value * Constants.TAX_WITHDRAW).toFixed(2)}`;
+        this.value = 0;
+      },
+      (error) => {
+        this.success = false;
+        this.message = error.message;
+      }
     );
-    user.transactions?.push(transaction);
-    WebStorageUtil.set(Constants.USERNAME_KEY, user);
-
-    this.success = true;
-    this.message = `Saque de R$ ${this.value.toFixed(2)} realizado com sucesso
-    com uma pequena taxa de R$ ${tax.toFixed(2)}`;
-
-    this.value = 0;
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
-import { UserService } from './../user.service';
+import { UserStorageService } from '../user-storage.service';
 
 @Component({
   selector: 'app-total-users',
@@ -12,7 +12,7 @@ export class TotalUsersComponent implements OnInit {
   value: number = 0;
   subscription: Subscription;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserStorageService) {
     this.subscription = this.userService.asObservable().subscribe(
       (data) => {
         this.value = data;

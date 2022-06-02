@@ -4,7 +4,7 @@
       "id": "10",
       "username": "tomaz.leite",
       "password": "qwerty",
-      "balance": 1066.0200000000002,
+      "balance": 857.0000000000002,
       "isAdmin": true
     },
     {
@@ -140,6 +140,163 @@
       "type": "deposit",
       "id": 947,
       "date": "2022-05-27T16:41:59.298Z",
+      "userId": "10"
+    },
+    {
+      "value": 44,
+      "tax": 0.88,
+      "type": "withdraw",
+      "id": 836,
+      "date": "2022-06-02T18:41:58.837Z"
+    },
+    {
+      "value": 56,
+      "tax": 1.12,
+      "type": "withdraw",
+      "id": 399,
+      "date": "2022-06-02T18:42:34.181Z"
+    },
+    {
+      "value": 44,
+      "tax": 0.88,
+      "type": "withdraw",
+      "id": 424,
+      "date": "2022-06-02T18:43:42.883Z"
+    },
+    {
+      "value": 33,
+      "tax": 0.66,
+      "type": "withdraw",
+      "id": 406,
+      "date": "2022-06-02T18:44:30.230Z"
+    },
+    {
+      "value": 34,
+      "tax": 0.68,
+      "type": "withdraw",
+      "id": 277,
+      "date": "2022-06-02T18:45:12.184Z"
+    },
+    {
+      "value": 33,
+      "tax": 0.66,
+      "type": "withdraw",
+      "id": 752,
+      "date": "2022-06-02T18:45:18.927Z"
+    },
+    {
+      "value": 33,
+      "tax": 0.66,
+      "type": "withdraw",
+      "id": 881,
+      "date": "2022-06-02T18:45:38.837Z"
+    },
+    {
+      "value": 56,
+      "tax": 1.12,
+      "type": "withdraw",
+      "id": 663,
+      "date": "2022-06-02T18:47:24.734Z"
+    },
+    {
+      "value": 11,
+      "tax": 0.22,
+      "type": "withdraw",
+      "id": 535,
+      "date": "2022-06-02T18:48:17.728Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 834,
+      "date": "2022-06-02T18:52:14.787Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 418,
+      "date": "2022-06-02T18:53:01.397Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 994,
+      "date": "2022-06-02T18:53:36.243Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 874,
+      "date": "2022-06-02T18:54:28.153Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 948,
+      "date": "2022-06-02T18:55:52.553Z"
+    },
+    {
+      "value": 23,
+      "tax": 0.46,
+      "type": "withdraw",
+      "id": 790,
+      "date": "2022-06-02T18:58:34.488Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 429,
+      "date": "2022-06-02T19:08:21.445Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 24,
+      "date": "2022-06-02T19:17:12.659Z"
+    },
+    {
+      "value": 13,
+      "tax": 0.26,
+      "type": "withdraw",
+      "id": 672,
+      "date": "2022-06-02T19:40:17.321Z"
+    },
+    {
+      "value": 83,
+      "tax": 17,
+      "type": "deposit",
+      "id": 981,
+      "date": "2022-06-02T20:06:44.628Z",
+      "userId": "10"
+    },
+    {
+      "value": 98,
+      "tax": 2,
+      "type": "deposit",
+      "id": 147,
+      "date": "2022-06-02T20:07:21.819Z",
+      "userId": "10"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 172,
+      "date": "2022-06-02T21:12:36.169Z"
+    },
+    {
+      "value": 95.5,
+      "tax": 4.5,
+      "type": "deposit",
+      "id": 341,
+      "date": "2022-06-02T21:12:58.097Z",
       "userId": "10"
     }
   ],

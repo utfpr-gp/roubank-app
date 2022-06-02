@@ -4,14 +4,14 @@ import { Constants } from 'src/app/util/constants';
 import { NgForm } from '@angular/forms';
 import { Shared } from '../util/shared';
 import { User } from './../model/user';
-import { UserService } from './user.service';
+import { UserStorageService } from './user-storage.service';
 import { WebStorageUtil } from 'src/app/util/web-storage-util';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  providers: [UserService],
+  providers: [UserStorageService],
 })
 export class UserComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
   isSuccess!: boolean;
   message!: string;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserStorageService) {}
 
   ngOnInit(): void {
     Shared.initializeWebStorage();

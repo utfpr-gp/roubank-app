@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Constants } from './../util/constants';
 import { Transaction } from './../model/transaction';
 import { User } from './../model/user';
+import { UserService } from './../services/user.service';
 import { WebStorageUtil } from './../util/web-storage-util';
 
 @Component({
@@ -17,7 +18,11 @@ export class BankStatementComponent implements OnInit {
   deposit = true;
   transactions!: Transaction[];
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -35,6 +40,15 @@ export class BankStatementComponent implements OnInit {
     });
     this.user = WebStorageUtil.get(Constants.USERNAME_KEY) as User;
     this.transactions = this.user.transactions;
+
+    this.userService.listTransactionsByUser(Constants.USERNAME_KEY).subscribe(
+      (data) => {
+        this.transactions = data;
+      },
+      (error) => {
+        alert(error);
+      }
+    );
 
     this.doBankStatement();
     this.doFilterTransactions(this.withdraw, this.deposit);
@@ -56,7 +70,7 @@ export class BankStatementComponent implements OnInit {
   }
 
   doFilterTransactions(withdraw: boolean, deposit: boolean) {
-    this.transactions = this.user?.transactions;
+    //this.transactions = this.user?.transactions;
     this.transactions = this.transactions?.filter(
       (t) =>
         (withdraw && t.type === Transaction.WITHDRAW_TYPE) ||
