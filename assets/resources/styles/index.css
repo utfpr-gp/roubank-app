@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "airborne";
+  src: url("/assets/resources/fonts/airborne.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .my-logo {
+    height: 64px;
+  }
+}
+
+@media (max-width: 992px) {
+}
