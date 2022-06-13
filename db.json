@@ -4,7 +4,7 @@
       "id": "10",
       "username": "tomaz.leite",
       "password": "qwerty",
-      "balance": 857.0000000000002,
+      "balance": 644.84,
       "isAdmin": true
     },
     {
@@ -298,6 +298,69 @@
       "id": 341,
       "date": "2022-06-02T21:12:58.097Z",
       "userId": "10"
+    },
+    {
+      "value": 32,
+      "tax": 0.64,
+      "type": "withdraw",
+      "id": 656,
+      "date": "2022-06-09T14:58:58.779Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 966,
+      "date": "2022-06-12T21:57:20.983Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 35,
+      "date": "2022-06-13T00:50:06.462Z"
+    },
+    {
+      "value": 10,
+      "tax": 0.2,
+      "type": "withdraw",
+      "id": 343,
+      "date": "2022-06-13T00:50:31.878Z"
+    },
+    {
+      "value": 10,
+      "tax": 0.2,
+      "type": "withdraw",
+      "id": 305,
+      "date": "2022-06-13T00:51:05.743Z"
+    },
+    {
+      "value": 10,
+      "tax": 0.2,
+      "type": "withdraw",
+      "id": 194,
+      "date": "2022-06-13T00:51:21.269Z"
+    },
+    {
+      "value": 12,
+      "tax": 0.24,
+      "type": "withdraw",
+      "id": 398,
+      "date": "2022-06-13T00:55:40.591Z"
+    },
+    {
+      "value": 50,
+      "tax": 1,
+      "type": "withdraw",
+      "id": 819,
+      "date": "2022-06-13T00:56:29.755Z"
+    },
+    {
+      "value": 50,
+      "tax": 1,
+      "type": "withdraw",
+      "id": 742,
+      "date": "2022-06-13T02:08:28.321Z"
     }
   ],
   "donations": [

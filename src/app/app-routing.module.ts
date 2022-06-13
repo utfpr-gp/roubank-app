@@ -6,6 +6,7 @@ import { BankStatementComponent } from './bank-statement/bank-statement.componen
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
 import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
+import { DraftComponent } from './draft/draft.component';
 import { LandPageComponent } from './land-page/land-page.component';
 import { LinkDonationStatementComponent } from './donation/link-donation-statement/link-donation-statement.component';
 import { LoginComponent } from './login/login.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'saque', component: WithdrawComponent },
   { path: 'deposito', component: DepositComponent },
   { path: 'nao-autorizado', component: NotauthorizedComponent },
+  { path: 'rascunho', component: DraftComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

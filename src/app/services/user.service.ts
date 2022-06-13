@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
 
 import { ErrorUtil } from './../util/error-util';
 import { Injectable } from '@angular/core';
@@ -6,7 +7,6 @@ import { Observable } from 'rxjs';
 import { RoutesAPI } from './../util/routes-api';
 import { Transaction } from './../model/transaction';
 import { User } from './../model/user';
-import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -22,9 +22,10 @@ export class UserService {
     const query: HttpParams = new HttpParams().set('username', username);
     const options = username ? { params: query } : {};
 
-    return this.httpClient
-      .get<User[]>(`${RoutesAPI.USERS}`, options)
-      .pipe(catchError(ErrorUtil.handleError));
+    return this.httpClient.get<User[]>(`${RoutesAPI.USERS}`, options).pipe(
+      //map((users: User[])=>users[0]),
+      catchError(ErrorUtil.handleError)
+    );
   }
 
   /**

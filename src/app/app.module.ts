@@ -27,6 +27,7 @@ import { TotalUsersComponent } from './user/total-users/total-users.component';
 import { UserComponent } from './user/user.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { DraftComponent } from './draft/draft.component';
 
 // import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
 // import ptBr from '@angular/common/locales/pt';
@@ -57,6 +58,7 @@ import { CpfPipe } from './pipes/cpf.pipe';
     NotauthorizedComponent,
     TotalUsersComponent,
     CpfPipe,
+    DraftComponent,
   ],
   imports: [
     BrowserModule,

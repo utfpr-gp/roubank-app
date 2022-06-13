@@ -25,7 +25,7 @@ export class WithdrawComponent implements OnInit {
 
   onSubmit() {
     this.withdrawService.do(this.value, Constants.USERNAME_KEY).subscribe(
-      (data) => {
+      (data: Transaction) => {
         let value = this.value;
         this.success = true;
         console.log(data);
