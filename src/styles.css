@@ -118,7 +118,7 @@ table > tbody > tr {
   padding-bottom: 13%;
   min-height: 680px;
   margin-bottom: 50px;
-  background-image: url("/assets/resources/images/tarifas.jpg");
+  background-image: url("assets/resources/images/tarifas.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

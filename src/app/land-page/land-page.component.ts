@@ -13,7 +13,7 @@ import { WebStorageUtil } from '../util/web-storage-util';
   styleUrls: ['./land-page.component.css'],
 })
 export class LandPageComponent implements OnInit {
-  imageURL: string = '/assets/resources/images/tarifas.jpg';
+  imageURL: string = 'assets/resources/images/tarifas.jpg';
   loggedIn = false;
   subscription!: Subscription;
 
