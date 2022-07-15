@@ -4,6 +4,10 @@ Este projeto tem como objetivo implementar progressivamente e de forma didática
 
 O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
+# Endereço de Deploy - GitHub Pages
+
+https://utfpr-gp.github.io/roubank-app/
+
 # Protótipo
 
 https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
