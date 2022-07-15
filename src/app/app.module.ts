@@ -7,9 +7,12 @@ import { BalanceComponent } from './balance/balance.component';
 import { BalancePanelComponent } from './shared/balance-panel/balance-panel.component';
 import { BankStatementComponent } from './bank-statement/bank-statement.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CityComponent } from './admin/city/city.component';
+import { CpfPipe } from './pipes/cpf.pipe';
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
 import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
+import { DraftComponent } from './draft/draft.component';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
@@ -26,8 +29,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TotalUsersComponent } from './user/total-users/total-users.component';
 import { UserComponent } from './user/user.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
-import { CpfPipe } from './pipes/cpf.pipe';
-import { DraftComponent } from './draft/draft.component';
 
 // import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
 // import ptBr from '@angular/common/locales/pt';
@@ -59,6 +60,7 @@ import { DraftComponent } from './draft/draft.component';
     TotalUsersComponent,
     CpfPipe,
     DraftComponent,
+    CityComponent,
   ],
   imports: [
     BrowserModule,

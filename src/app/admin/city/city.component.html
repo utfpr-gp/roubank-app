@@ -1,0 +1,135 @@
+<div class="container contact">
+  <h5>Cadastro de Cidade</h5>
+  <h6>Cadastre mais uma cidade para oferecer os nossos serviços</h6>
+
+  <hr />
+
+  <div class="row" *ngIf="isShowMessage">
+    <div class="col s12">
+      <div
+        class="card-panel {{
+          isShowMessage == true && isSuccess ? 'blue' : 'orange'
+        }}"
+      >
+        <div class="white-text" [innerHTML]="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn left blue" type="button" (click)="onReset()">
+      <i class="material-icons left">add</i>
+      Novo
+    </button>
+  </div>
+  {{ city | json }}
+  <div class="row card-panel white">
+    <form
+      class="col s12"
+      style="margin-top: 3em"
+      novalidate
+      #form="ngForm"
+      (ngSubmit)="onSubmit()"
+      *ngIf="isLoadData"
+    >
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="select-state" class="active">Estado *</label>
+          <select
+            id="select-state"
+            name="select-state"
+            [compareWith]="compareStates"
+            [(ngModel)]="city.state"
+            #state="ngModel"
+            #stateSelect
+            required
+          >
+            <option [ngValue]="{}" disabled>Selecione um estado</option>
+            <option *ngFor="let s of states" [ngValue]="s">{{ s.name }}</option>
+          </select>
+          <div class="red-text" [hidden]="state.valid || state.untouched">
+            Por favor, nos informe o estado.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            placeholder="Nome da cidade."
+            id="input-city-name"
+            name="input-city-name"
+            type="text"
+            [(ngModel)]="city.name"
+            #name="ngModel"
+            required
+          />
+          <label for="input-city-name" class="active">Cidade *</label>
+          <div class="red-text" [hidden]="name.valid || name.untouched">
+            Por favor, informe a cidade.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            placeholder="Endereço da imagem da cidade"
+            id="input-city-image-path"
+            name="input-city-image-path"
+            type="text"
+            [(ngModel)]="city.imagePath"
+            #imagePath="ngModel"
+            required
+          />
+          <label for="input-city-image-path" class="active"
+            >Caminho da Imagem *</label
+          >
+          <div
+            class="red-text"
+            [hidden]="imagePath.valid || imagePath.untouched"
+          >
+            Por favor, informe a URL da imagem da cidade.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <button class="btn right" type="submit" [disabled]="!form.valid">
+            Salvar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of cities">
+          <td>{{ c.name }}</td>
+          <td>{{ c.state!.name }}</td>
+          <td class="right">
+            <a
+              ><i class="material-icons my-icon-size" (click)="onEdit(c)"
+                >edit</i
+              ></a
+            >
+            <a
+              ><i class="material-icons my-icon-size" (click)="onDelete(c.id!)"
+                >delete</i
+              ></a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

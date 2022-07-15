@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from './util/authentication.guard';
 import { BalanceComponent } from './balance/balance.component';
 import { BankStatementComponent } from './bank-statement/bank-statement.component';
+import { CityComponent } from './admin/city/city.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { DonationComponent } from './donation/donation.component';
 import { DonationStatementComponent } from './donation/donation-statement/donation-statement.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'a/usuarios',
     component: UserComponent,
+    canActivate: [AuthenticationGuard],
+  },
+  {
+    path: 'a/cidades',
+    component: CityComponent,
     canActivate: [AuthenticationGuard],
   },
   {

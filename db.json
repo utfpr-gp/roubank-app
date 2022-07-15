@@ -369,5 +369,39 @@
       "value": 10,
       "userId": "10"
     }
+  ],
+  "states": [
+    {
+      "id": 1,
+      "name": "Paraná",
+      "abbreviation": "PR"
+    },
+    {
+      "id": 2,
+      "name": "Santa Catarina",
+      "abbreviation": "SC"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Guarapuava",
+      "state": {
+        "id": 1,
+        "name": "Paraná",
+        "abbreviation": "PR"
+      },
+      "id": 1,
+      "imagePath": "https://picsum.photos/200/300"
+    },
+    {
+      "name": "Porto União",
+      "state": {
+        "id": 2,
+        "name": "Santa Catarina",
+        "abbreviation": "SC"
+      },
+      "imagePath": "dsfs",
+      "id": 2
+    }
   ]
 }
