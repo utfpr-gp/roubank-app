@@ -1,0 +1,98 @@
+<form
+  formGroup="equipamentoForm"
+  (submit)="onSubmit()"
+  novalidate
+  class="row col s12 l12"
+>
+  <div>
+    <div class="formGroup input-field col s12 l6">
+      <input
+        id="nomeEquipamento"
+        name="nomeEquipamento"
+        type="text"
+        class="validate"
+        [(ngModel)]="nomeEquipamento"
+        pattern="(\s?[A-ZÀ-Ú][a-zà-ú])+(\s?([A-ZÀ-Ú]|[a-zà-ú]|-|\d))+"
+        #nomeEqui="ngModel"
+        required
+      />
+      <label for="nomeEquipamento">Nome do Equipamento*</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <input
+        id="modelo"
+        name="modelo"
+        type="text"
+        class="validate"
+        [(ngModel)]="modelo"
+        #model="ngModel"
+        required
+      />
+      <label for="modelo">Modelo*</label>
+      <span [hidden]="model.valid|| model.untouched">
+        Por favor, informe o modelo do equipamento.
+      </span>
+    </div>
+  </div>
+  <div>
+    <div class="input-field col s12 l6">
+      <input
+        id="serie"
+        name="serie"
+        type="text"
+        required
+        class="validate"
+        [(ngModel)]="serie"
+        #series="ngModel"
+        required
+      />
+      <label for="serie">Número de série*</label>
+      <span [hidden]="series.valid|| series.untouched">
+        Por favor, informe o número de série do equipamento.
+      </span>
+    </div>
+    <div class="input-field col s12 l6">
+      <input
+        id="fabricante"
+        name="fabricante"
+        type="text"
+        class="validate"
+        [(ngModel)]="fabricante"
+        #fabri="ngModel"
+        required
+      />
+      <label for="fabricante">Fabricante</label>
+      <span [hidden]="fabri.valid|| fabri.untouched">
+        Por favor, informe o fabricante do equipamento.
+      </span>
+    </div>
+  </div>
+  <div>
+    <div class="input-field col s12 l6">
+      <input
+        id="voltagem"
+        name="voltagem"
+        type="text"
+        class="validate"
+        [(ngModel)]="voltagem"
+        #voltage="ngModel"
+        required
+      />
+      <label for="voltagem">Voltagem</label>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="waves-effect waves-light btn red"
+    [disabled]="equipamentoForm.valid"
+  >
+    Salvar
+  </button>
+  <button
+    type="button"
+    class="waves-effect waves-light btn red"
+    (click)="limpar()"
+  >
+    Limpar
+  </button>
+</form>

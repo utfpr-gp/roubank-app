@@ -27,7 +27,7 @@
     "material-icons": "^1.11.4",
     "materialize-css": "^1.0.0",
     "ngx-mask": "^13.1.10",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

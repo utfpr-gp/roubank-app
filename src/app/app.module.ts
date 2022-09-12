@@ -29,12 +29,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TotalUsersComponent } from './user/total-users/total-users.component';
 import { UserComponent } from './user/user.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 // import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
-// import ptBr from '@angular/common/locales/pt';
-// import { registerLocaleData } from '@angular/common';
 
-//registerLocaleData(ptBr);
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -69,7 +69,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     FormsModule,
     NgxMaskModule.forRoot(),
   ],
-  //providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
