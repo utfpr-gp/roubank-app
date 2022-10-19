@@ -1,0 +1,26 @@
+<div class="container contact">
+  <h5>Saldo</h5>
+  <h6>
+    Cobramos uma taxa de apenas 25 centavos para apresentação do extrato a ser
+    debitado só no seu próximo depósito
+  </h6>
+  <hr />
+  <div class="row">
+    <app-balance-panel
+      #balance
+      [value]="this.user?.balance || 0"
+      (dblclick)="
+        balance.getBackgroundColor() == 'amber'
+          ? balance.onDblClickBalance('blue')
+          : balance.onDblClickBalance('amber')
+      "
+    ></app-balance-panel>
+  </div>
+  <!-- link home -->
+  <div id="painel-login" class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a routerLink="/"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>

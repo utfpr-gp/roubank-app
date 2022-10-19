@@ -1,0 +1,48 @@
+<div class="container contact">
+  <h5>Saque</h5>
+  <h6>Cobramos uma taxa de 2% sobre o valor do saque</h6>
+  <hr />
+  <div class="row">
+    <div class="col s12">
+      <div
+        class="card-panel white-text"
+        [hidden]="!this.message"
+        [class.red]="!this.success"
+        [class.blue]="this.success"
+      >
+        {{ this.message }}
+      </div>
+    </div>
+    <form class="col s12" (ngSubmit)="this.onSubmit()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="input-withdraw"
+            name="input-withdraw"
+            type="text"
+            class="validate money"
+            [(ngModel)]="this.value"
+            mask="separator.2"
+            [thousandSeparator]="'.'"
+            [decimalMarker]="','"
+            prefix="R$ "
+            [dropSpecialCharacters]="true"
+            [showMaskTyped]="false"
+          />
+          <label for="input-withdraw">Valor de Saque</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light amber darken-4" type="submit">
+        Saque
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+  <!-- link home -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>

@@ -1,0 +1,6 @@
+{
+  "/transactions/type/:t": "/transactions?type=:t",
+  "/transacoes/tipo/:t": "/transactions?type=:t",
+  "/usuarios": "/users",
+  "/usuarios/:username": "/users?username=:username"
+}

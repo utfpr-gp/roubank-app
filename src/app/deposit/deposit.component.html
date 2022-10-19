@@ -1,0 +1,70 @@
+<app-modal [show]="modal.show" [content]="modal" (closeEvent)="onCloseModal()">
+</app-modal>
+<div class="container contact">
+  <h5>Depósito</h5>
+  <h6>Cobramos uma taxa de 1% sobre o valor do depósito</h6>
+  <hr />
+
+  <div class="row">
+    <div class="col s12">
+      <div
+        id="div-deposit-message"
+        class="card-panel white-text"
+        [hidden]="!this.depositMessage"
+        [class.red]="this.depositInvalid"
+        [class.blue]="!this.depositInvalid"
+      >
+        {{ this.depositMessage }}
+      </div>
+    </div>
+    <form class="col s12" (submit)="onSubmit()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="input-deposit"
+            name="input-deposit"
+            type="text"
+            class="validate money"
+            [(ngModel)]="this.value"
+            mask="separator.2"
+            [thousandSeparator]="'.'"
+            [decimalMarker]="','"
+            prefix="R$ "
+            [dropSpecialCharacters]="true"
+            [showMaskTyped]="false"
+          />
+          <label for="input-deposit" class="active">Valor de depósito</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light amber darken-4" type="submit">
+        Depositar
+        <i class="material-icons right">send</i>
+      </button>
+      <button
+        style="margin-left: 10px"
+        class="btn waves-effect waves-light amber darken-4"
+        type="button"
+        (click)="onResetClick()"
+      >
+        Apagar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+
+  <p>Valor: {{ this.value }}</p>
+
+  <h5>MEU SALDO</h5>
+  <app-balance-panel
+    #balance
+    [value]="this.user.balance"
+    (donationEvent)="this.onDonationEvent($event)"
+  ></app-balance-panel>
+  <!-- link home -->
+  <div class="row">
+    <div class="col s12 m6 offset-m3 center">
+      <a href="/index.html"> VOLTAR AO MENU PRINCIPAL </a>
+    </div>
+  </div>
+  <!-- link home -->
+</div>

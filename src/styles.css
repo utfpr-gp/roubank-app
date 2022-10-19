@@ -118,7 +118,7 @@ table > tbody > tr {
   padding-bottom: 13%;
   min-height: 680px;
   margin-bottom: 50px;
-  background-image: url("/assets/resources/images/tarifas.jpg");
+  background-image: url("assets/resources/images/tarifas.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -174,15 +174,4 @@ table > tbody > tr {
 
 .contact .contact-holder p {
   margin-bottom: 30px;
-}
-
-/**
-	Saldo
-*/
-
-.my-balance {
-  padding: 20px 0px !important;
-  font-size: 3em;
-  font-family: "airborne";
-  text-align: center;
 }
