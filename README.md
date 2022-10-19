@@ -4,15 +4,15 @@ Este projeto tem como objetivo implementar progressivamente e de forma didática
 
 O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
-# Endereço de Deploy - GitHub Pages
+## Endereço de Deploy - GitHub Pages
 
 https://utfpr-gp.github.io/roubank-app/
 
-# Protótipo
+## Protótipo
 
 https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
 
-# Checklist
+## Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro)
@@ -32,3 +32,13 @@ https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
 - [x] Build e deploy da aplicação.
+
+## Manual de execução
+- Clonar o repositório com `git clone`
+- Fazer checkout no branch `develop` que contém as modificações mais recentes
+- Abrir o projeto no editor Visual Studio Code (VS Code)
+- Abrir um terminal pelo VSCode e executar a API Fake (JSON Server) via o seguinte comando: 
+  - Comando: `npm run json-server --watch db.json --routes routes.json`
+  - O comando deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
+- Abrir um novo terminal pelo VSCode e então executar o projeto Angular
+  - Comando: `ng s`
