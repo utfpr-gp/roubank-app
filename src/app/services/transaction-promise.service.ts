@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Transaction } from './../model/transaction';
 import { User } from '../model/user';
+import { RoutesAPI } from '../util/routes-api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TransactionPromiseService {
-  URL = 'http://localhost:3000/transactions';
+  URL = RoutesAPI.TRANSACTIONS;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

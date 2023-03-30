@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
+import { RoutesAPI } from '../util/routes-api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserPromiseService {
-  URL = 'http://localhost:3000/users';
-  URL_PT = 'http://localhost:3000/usuarios';
+  URL = `${RoutesAPI.USERS}`;
+  URL_PT = `${RoutesAPI.USERS_PT}`;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -17,7 +18,9 @@ export class UserPromiseService {
   constructor(private httpClient: HttpClient) {}
 
   getByUsername(username: string): Promise<User[]> {
-    return this.httpClient.get<User[]>(`${this.URL_PT}/${username}`).toPromise();
+    return this.httpClient
+      .get<User[]>(`${this.URL_PT}/${username}`)
+      .toPromise();
   }
 
   save(user: User): Promise<User> {

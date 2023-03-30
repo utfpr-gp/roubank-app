@@ -10,7 +10,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch db.json",
-    "json:server:routes": "json-server --watch db.json --routes routes.json"
+    "json:server:routes": "json-server --watch db.json --routes routes.json",
+    "docker:build": "docker build -t roubank-app .",
+    "docker:run": "docker run -p 4200:80 roubank-app"
   },
   "private": true,
   "dependencies": {

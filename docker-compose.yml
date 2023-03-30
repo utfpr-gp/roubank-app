@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  roubank-app:
+    image: roubank-app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4200:80
+
+  json-server:
+    image: vimagick/json-server
+    command: -H 0.0.0.0 -p 3000 -w db.json
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data:/data
+    restart: always

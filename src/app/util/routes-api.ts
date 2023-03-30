@@ -1,7 +1,9 @@
+import { environment } from 'src/environments/environment';
 export class RoutesAPI {
-  public static readonly TRANSACTIONS = 'http://localhost:3000/transactions';
-  public static readonly USERS = 'http://localhost:3000/users';
-  public static readonly USERS_PT = 'http://localhost:3000/users';
-  public static readonly CITIES = 'http://localhost:3000/cities';
-  public static readonly STATES = 'http://localhost:3000/states';
+  public static apiUrl = environment.apiURL;
+  public static readonly TRANSACTIONS = RoutesAPI.apiUrl + '/transactions';
+  public static readonly USERS = RoutesAPI.apiUrl + '/users';
+  public static readonly USERS_PT = RoutesAPI.apiUrl + '/usuarios';
+  public static readonly CITIES = RoutesAPI.apiUrl + '/cities';
+  public static readonly STATES = RoutesAPI.apiUrl + '/states';
 }
