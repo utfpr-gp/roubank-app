@@ -1,0 +1,8 @@
+FROM vimagick/json-server
+
+WORKDIR /data
+
+COPY db.json .
+
+
+

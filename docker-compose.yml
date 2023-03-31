@@ -13,9 +13,16 @@ services:
 
   json-server:
     image: vimagick/json-server
-    command: -H 0.0.0.0 -p 3000 -w db.json
+    build:
+      context: .
+      dockerfile: ./Dockerfile.json-server
+    #informa o caminho do db.json no volume compartilhado
+    command: --host 0.0.0.0 --port 3000 --watch db.json
+    #no azure
+    #command: json-server --host 0.0.0.0 --port 3000 --watch https://<nome do seu blob>.blob.core.windows.net/<nome do seu container>/db.json
     ports:
       - 3000:3000
-    volumes:
-      - ./data:/data
+    #compartilhamento de diretorio entre o host e o container
+    #volumes:
+    #  - ./data:/data
     restart: always
