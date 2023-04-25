@@ -42,10 +42,10 @@
 
         <tbody>
           <tr *ngFor="let t of this.transactions" (click)="onClickItem(t)">
-            <td>{{ t.date | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+            <td>{{ t.date | date : "dd/MM/yyyy HH:mm:ss" }}</td>
             <td>{{ t.type | uppercase }}</td>
-            <td>{{ t.value | currency: "BRL" }}</td>
-            <td>{{ t.tax | currency: "BRL" }}</td>
+            <td>{{ t.value | currency : "BRL" }}</td>
+            <td>{{ t.tax | currency : "BRL" }}</td>
           </tr>
         </tbody>
       </table>

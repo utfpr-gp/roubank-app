@@ -91,7 +91,7 @@ export class CityComponent implements OnInit, AfterViewInit {
         this.states = states;
         this.isLoadData = true;
 
-        setTimeout(() => {
+        window.setTimeout(() => {
           M.FormSelect.init(this.stateSelect.nativeElement);
         }, 100);
       },

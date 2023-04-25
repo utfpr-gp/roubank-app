@@ -3,6 +3,7 @@ version: "3.4"
 services:
   roubank-app:
     image: roubank-app
+    container_name: roubank-app
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -12,7 +13,8 @@ services:
       - 4200:80
 
   json-server:
-    image: vimagick/json-server
+    image: roubank-app.json-server
+    container_name: json-server
     build:
       context: .
       dockerfile: ./Dockerfile.json-server

@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     navigator.geolocation.getCurrentPosition((position) => {
       this.coords = position.coords;
     });
