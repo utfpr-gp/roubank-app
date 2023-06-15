@@ -26,7 +26,6 @@ export class CityComponent implements OnInit, AfterViewInit {
   cities: City[];
   states: State[];
 
-
   isLoadData = false;
 
   isSubmitted: boolean = false;

@@ -1,9 +1,4 @@
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  Router,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 
 import { Constants } from 'src/app/util/constants';
 import { Injectable } from '@angular/core';
@@ -11,7 +6,7 @@ import { User } from './../model/user';
 import { WebStorageUtil } from 'src/app/util/web-storage-util';
 
 @Injectable()
-export class AuthenticationGuard implements CanActivate {
+export class AuthenticationGuard  {
   constructor(private router: Router) {}
 
   canActivate(
