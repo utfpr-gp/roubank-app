@@ -14,24 +14,27 @@ https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
 
 ## Checklist
 
-- [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
-- [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro)
-- [x] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
-- [x] Construir páginas web com o conceito de componentes.
-- [x] Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.
-- [x] Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
-- [x] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
-- [x] Mapear componentes à rotas no módulo de rotas.
-- [x] Criar navegação entre páginas por meio de rotas.
-- [x] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
-- [x] Validar campos do formulário com REGEX e apresentar os erros.
-- [x] Desabilitar o botão de submit enquanto o formulário está inválido.
-- [x] Fazer requisições a API com tratamento da resposta com Promises ou Observables.
-- [x] Cadastrar uma entidade no JSON Server.
-- [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
-- [x] Usar a diretiva ngIf
-- [x] Formatar a apresentação de dados com Pipes.
-- [x] Build e deploy da aplicação.
+- [x] Criar um repositório no GitHub com a estrutura do Gitflow, incluindo pelo menos as branches principais "main" e "develop."
+- [x] Utilizar componentes de um framework CSS, como Bootstrap, Materialize ou outro à sua escolha.
+- [x] Apresentar as telas com layout responsivo, adaptando-se a diferentes tamanhos de tela, usando um framework CSS ou implementações personalizadas.
+- [x] Desenvolver o layout da aplicação com componentes, tornando o cabeçalho e o rodapé componentes reutilizáveis.
+- [x] Aplicar pelo menos dois tipos de data-binding, como Interpolation, Property Binding, Event Binding, Two-Way Data Binding, 
+- [x] Empregar variáveis de template e a anotação ViewChild para interagir com elementos do DOM ou componentes diretamente no template ou no código TypeScript do aplicativo.
+- [x] Estabelecer a passagem de dados entre componentes por meio da hierarquia de componentes, empregando as anotações @Input e @Output.
+- [x] Transferir dados, por meio de serviços, entre componentes que não estão diretamente relacionados.
+- [x] Mapear os componentes às rotas no módulo de rotas, criando uma estrutura de navegação eficiente.
+- [x] Permitir a navegação fluida entre as diferentes páginas do aplicativo por meio de links e botões de navegação.
+- [x] Validar os campos do formulário com expressões regulares (REGEX) e apresentar as mensagens de erro.
+- [x] Implementar máscaras em campos de formulário, quando necessário, para melhorar a experiência do usuário ao inserir dados.
+- [x] Desabilitar o botão de envio (submit) enquanto o formulário estiver em um estado inválido.
+- [x] Realizar requisições à API com tratamento adequado das respostas de sucesso e erro com Promises.
+- [x] Realizar requisições à API com tratamento adequado das respostas de sucesso e erro com Observables.
+- [x] Criar o cadastro completo de uma entidade, incluindo operações de criação, leitura, atualização e exclusão (CRUD) utilizando uma API, como o JSON Server.
+- [x] Utilizar o armazenamento local (LocalStorage ou SessionStorage) para armazenar dados temporários, quando necessário.
+- [x] Aplicar a diretiva estrutural ngFor para apresentar uma lista dinâmica de dados em seu aplicativo.
+- [x] Utilizar a diretiva ngIf para controlar a exibição ou ocultação de elementos com base em condições específicas.
+- [x] Formatar a apresentação de dados com Pipes, de acordo com os requisitos do aplicativo.
+- [x] Executar o processo de build da aplicação e realizar o deploy para tornar o aplicativo acessível online.
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
